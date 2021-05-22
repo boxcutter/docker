@@ -1,0 +1,2 @@
+# List of error codes to ignore
+DL3008 # Pin versions in apt-get install.
