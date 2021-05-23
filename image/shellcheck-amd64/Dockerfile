@@ -15,4 +15,4 @@ RUN apt-get update \
 
 FROM scratch
 COPY --from=build /usr/local/bin/shellcheck /bin/
-ENTRYPOINT ["/bin/shellcheck"]
+CMD ["/bin/shellcheck"]
