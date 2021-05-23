@@ -17,7 +17,7 @@ RUN mkdir -p /share
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y ca-certificates curl git \
-  && curl -o /tmp/cinc-auditor.deb -L http://downloads.cinc.sh/files/stable/cinc-auditor/${VERSION}/ubuntu/20.04/cinc-auditor_${VERSION}-1_arm64.deb \
+  && curl -o /tmp/cinc-auditor.deb -L http://downloads.cinc.sh/files/stable/cinc-auditor/${VERSION}/ubuntu/20.04/cinc-auditor_${VERSION}-1_amd64.deb \
   && apt-get install --no-install-recommends -y /tmp/cinc-auditor.deb \
   && rm -f /tmp/cinc-auditor.deb \
   && apt-get clean \
