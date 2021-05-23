@@ -10,7 +10,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && curl -o "shellcheck.tar.xz" -L "https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz" \
   && echo "${SHELLCHECK_SHA256} *shellcheck.tar.xz" | sha256sum --check --strict \
-  && tar --strip-components=1 -xf shellcheck.tar.xz -O | grep shellcheck > /usr/local/bin/shellcheck \
+  && tar xvf shellcheck.tar.xz --strip-components=1 -C /usr/local/bin \
   && chmod +x /usr/local/bin/shellcheck
 
 FROM scratch
