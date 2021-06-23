@@ -1,7 +1,8 @@
 #!/bin/bash
 
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+BIN_DIR="${SCRIPT_PATH}"
 BASE_DIR=$(pwd)
-BIN_DIR="${BASE_DIR}/../../bin"
 HADOLINT_DOCKER_IMAGE=boxcutter/hadolint-amd64
 
 lints_to_ignore=$(sed "s/#.*//" "${BIN_DIR}/hadolint-ignore" | sed '/^[[:space:]]*$/d' | sed 's/^/--ignore / ' | tr '\n' ' ')

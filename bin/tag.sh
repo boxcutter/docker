@@ -4,9 +4,10 @@
 set -eu
 set -o pipefail
 
+SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+BIN_DIR="${SCRIPT_PATH}"
 BASE_DIR=$(pwd)
-BIN_DIR="${BASE_DIR}/../../bin"
-IMAGE_NAME=$(basename "$(pwd)")
+IMAGE_NAME="$(${BIN_DIR}/image-name.sh)"
 DOCKER_REPO="docker.io/boxcutter"
 SOURCE_IMAGE="${DOCKER_REPO}/${IMAGE_NAME}"
 
