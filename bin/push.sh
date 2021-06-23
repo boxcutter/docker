@@ -14,6 +14,6 @@ echo "${DOCKER_PASSWORD}" | docker login -u ${DOCKER_USERNAME} --password-stdin
 
 tags="$(${BIN_DIR}/list-tags.sh)"
 while read -r tag; do
-  echo "Deploying ${tag} to dockerhub"
+  echo "==> Deploying ${tag}"
   docker push ${tag} | tee -a "${DOCKERFILE_DIR}/docker_image_BUILD.log"
 done <<< "${tags}"
